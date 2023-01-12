@@ -15,12 +15,11 @@
         System.out.println(calculator);
     }
 
-    public String MortgageCalculator(long loanAmount, int termInYears, float annualRate){
+    public MortgageCalculator(long loanAmount, int termInYears, float annualRate){
         this.loanAmount = loanAmount;
         this.termInYears = termInYears;
         this.annualRate = annualRate;
-        System.out.println(toString());
-        return toString();
+        
     }
     private int getNumberOfPayments(){
         return termInYears*12;
