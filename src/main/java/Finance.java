@@ -22,12 +22,12 @@ public class Finance {
     int three = 3;
 //    String
     switch (commandsToUsage.get(args[0])){
-      case BEST_LOAN_RATES:  len = 1;
-        break;
-      case SAVINGS_CALCULATOR: len = three;
-        break;
-      case MORTGAGE_CALCULATOR: len = 4;
-        break;
+      case BEST_LOAN_RATES:  return args.length == 1;
+
+      case SAVINGS_CALCULATOR: return args.length == three;
+
+      case MORTGAGE_CALCULATOR: return args.length == 4;
+
   }return false;
   }
   private static void executeCommand(String command, String[] arguments){
@@ -52,13 +52,11 @@ public class Finance {
       System.out.println(command + ": command not found");
       return;
     }
-    if (!isValidCommand) {
-      commandsToUsage.get(args[0]);
+  if (!isValidCommand) {
+      System.out.println(commandsToUsage.get(args[0]));
       return;
     }
-//    for (int i = 1, Arrays.copyOfRange(validateCommandArguments(args,1,args.length)) > i, i++){
-//      executeCommand(command, args[i]);
-//    }
+    executeCommand(command, Arrays.copyOfRange(args,1,args.length));
   }
 
 }
